@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6fcd2;
+  padding: 1.5rem;
+}
+.logo a {
+  color: #5a6f08;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+.navigation {
+  margin-right: 1rem;
+  a {
+    color: #5a6f08;
+    font-weight: 600;
+    padding: 2rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+.activeLink {
+  color: #8f927a !important;
+}
