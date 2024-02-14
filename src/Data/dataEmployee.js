@@ -1,0 +1,58 @@
+export const dataEmployee = [
+  {
+    firstName: "Cesar",
+    lastName: "Coolen",
+    birthday: "1970-05-29T12:00:58.971Z",
+    street: "3005 Pilo Avenue",
+    city: "Huntsville",
+    state: {
+      abbreviation: "AL",
+      name: "Alabama",
+    },
+    zipCode: "35801",
+    startDate: "2023-04-12T12:00:58.971Z",
+    department: "Engineering",
+  },
+  {
+    firstName: "Raphael",
+    lastName: "Depars",
+    birthday: "1968-10-06T12:00:58.971Z",
+    street: "257 Machine Lane",
+    city: "Ketchikan",
+    state: {
+      abbreviation: "AK",
+      name: "Alaska",
+    },
+    zipCode: "99901",
+    startDate: "2022-04-18T12:00:58.971Z",
+    department: "Sales",
+  },
+  {
+    firstName: "Ricco",
+    lastName: "Rothonde",
+    birthday: "1975-03-03T12:00:58.971Z",
+    street: "3 Mayork Boulevard",
+    city: "Phoenix",
+    state: {
+      abbreviation: "AS",
+      name: "American Samoa",
+    },
+    zipCode: "85004",
+    startDate: "2021-06-30T12:00:58.971Z",
+    department: "Sales",
+  },
+  {
+    firstName: "Rachel",
+    lastName: "Lambert",
+    birthday: "1975-03-03T12:00:58.971Z",
+    street: "3 Mayork Boulevard",
+    city: "Phoenix",
+    state: {
+      abbreviation: "AZ",
+      name: "Arizona",
+    },
+    zipCode: "85004",
+    startDate: "2021-06-30T12:00:58.971Z",
+    department: "Sales",
+  },
+];
