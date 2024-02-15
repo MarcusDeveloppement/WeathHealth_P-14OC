@@ -1,3 +1,48 @@
 .errorInput {
   color: red;
+  margin: 0;
+}
+.contentEmployee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentForm {
+  margin-top: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2.5rem;
+  background-color: #fffff5;
+  h1 {
+    margin: 0;
+  }
+  input {
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+  select {
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.button {
+  text-align: center;
+  margin-top: 1.5rem;
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #f6fcd2;
+    color: #5a6f08;
+    border: 1px solid #5a6f08;
+    border-radius: 5px;
+  }
 }

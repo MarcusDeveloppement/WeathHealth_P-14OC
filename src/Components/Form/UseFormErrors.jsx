@@ -9,26 +9,42 @@ export const useFormErrors = () => {
   const zipCodeRegex = /^[0-9]{5}(?:-[0-9]{4})?$/;
 
   const testFormValue = (property, errorType) => {
+    let hasError = false;
     switch (errorType) {
       case "firstName":
-        setFirstNameError(!property);
-        break;
       case "lastName":
-        setLastNameError(!property);
-        break;
       case "street":
-        setStreetError(!property);
-        break;
       case "city":
-        setCityError(!property);
+        hasError = !property;
         break;
       case "zipCode":
-        setZipCodeError(property && !zipCodeRegex.test(property));
+        hasError = !property || !zipCodeRegex.test(property);
+        break;
+      default:
+        break;
+    }
+
+    switch (errorType) {
+      case "firstName":
+        setFirstNameError(hasError);
+        break;
+      case "lastName":
+        setLastNameError(hasError);
+        break;
+      case "street":
+        setStreetError(hasError);
+        break;
+      case "city":
+        setCityError(hasError);
+        break;
+      case "zipCode":
+        setZipCodeError(hasError);
         break;
       default:
         break;
     }
   };
+
   const validateAllFields = (newEmployee) => {
     testFormValue(newEmployee.firstName, "firstName");
     testFormValue(newEmployee.lastName, "lastName");
@@ -36,15 +52,16 @@ export const useFormErrors = () => {
     testFormValue(newEmployee.city, "city");
     testFormValue(newEmployee.zipCode, "zipCode");
 
-    // Retourne si le formulaire est valide
-    return (
-      newEmployee.firstName &&
-      newEmployee.lastName &&
-      newEmployee.street &&
-      newEmployee.city &&
-      (!newEmployee.zipCode || zipCodeRegex.test(newEmployee.zipCode))
+    return !(
+      !newEmployee.firstName ||
+      !newEmployee.lastName ||
+      !newEmployee.street ||
+      !newEmployee.city ||
+      !newEmployee.zipCode ||
+      !zipCodeRegex.test(newEmployee.zipCode)
     );
   };
+
   return {
     firstNameError,
     lastNameError,
