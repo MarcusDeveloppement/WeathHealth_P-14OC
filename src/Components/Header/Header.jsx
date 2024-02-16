@@ -4,7 +4,7 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.logo}>
         <NavLink to="/">Wealth Health</NavLink>
       </div>

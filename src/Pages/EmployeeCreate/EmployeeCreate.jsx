@@ -60,15 +60,24 @@ export default function EmployeeCreate() {
     }
   }, [USstateList, departmentList, dispatch]);
 
+  useEffect(() => {
+    if (USstateList.length > 0 && !USstate) {
+      setUSstate(USstateList[0].abbreviation);
+    }
+    if (departmentList.length > 0 && !department) {
+      setDepartment(departmentList[0]);
+    }
+  }, [USstateList, departmentList, USstate, department]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const newEmployee = Object.fromEntries(formData.entries());
 
-    newEmployee.state = USstate;
+    newEmployee.state = { abbreviation: USstate };
     newEmployee.department = department;
-    newEmployee.birthday = birthday.toISOString().split("T")[0];
-    newEmployee.startDate = startDate;
+    newEmployee.birthday = formatDateDDMMYYYY(birthday);
+    newEmployee.startDate = formatDateDDMMYYYY(new Date(startDate));
 
     const isFormValid = validateAllFields(newEmployee);
 
@@ -84,13 +93,22 @@ export default function EmployeeCreate() {
 
   const formatDate = (date) => date.toISOString().split("T")[0];
 
+  const formatDateDDMMYYYY = (date) => {
+    return new Intl.DateTimeFormat("fr-FR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(date);
+  };
+
   return (
     <div className={styles.contentEmployee}>
+      {isModalOpen && <div className={styles.overlay}></div>}
       <div className={styles.contentForm}>
-        <h1 className="newEmployee-title">Create an employee</h1>
+        <h1>Create an employee</h1>
         <form className={styles.inForm} onSubmit={handleSubmit}>
           <Card title="Personal information">
-            <div className="newEmployee-contentRow">
+            <div>
               <div className={styles.formLabel}>
                 <label htmlFor="firstName">First name</label>
                 <input
@@ -152,7 +170,7 @@ export default function EmployeeCreate() {
             </div>
           </Card>
           <Card title="Address">
-            <div className="newEmployee-contentRow">
+            <div>
               <div className={styles.formLabel}>
                 <label htmlFor="street">Street</label>
                 <input
@@ -188,7 +206,7 @@ export default function EmployeeCreate() {
                 )}
               </div>
             </div>
-            <div className="newEmployee-contentRow">
+            <div>
               <div className={styles.formLabel}>
                 <label htmlFor="state">State</label>
                 <select
@@ -228,7 +246,7 @@ export default function EmployeeCreate() {
           </Card>
 
           <Card title="Company information">
-            <div className="newEmployee-contentRow">
+            <div>
               <div className={styles.formLabel}>
                 <label htmlFor="startDate">Start date</label>
                 <input

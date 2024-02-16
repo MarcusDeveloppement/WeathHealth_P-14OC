@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .contentForm {
@@ -14,7 +15,9 @@
   border-radius: 10px;
   padding: 2.5rem;
   background-color: #fffff5;
+
   h1 {
+    // font-family: "DM Serif Display", serif;
     margin: 0;
   }
   input {
@@ -44,5 +47,21 @@
     color: #5a6f08;
     border: 1px solid #5a6f08;
     border-radius: 5px;
+    &:hover {
+      background-color: #95b31eb7;
+      color: #ffffff;
+    }
   }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
