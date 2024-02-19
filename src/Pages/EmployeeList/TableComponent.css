@@ -15,9 +15,9 @@
   font-size: 1.3rem;
   display: flex;
   align-items: center;
-  select {
-    font-size: 1.2rem;
-  }
+}
+.searchBar select {
+  font-size: 1.2rem;
 }
 
 .inputContent {
@@ -45,9 +45,9 @@
   background-color: #e2dbfd;
   border-radius: 5px;
   padding-bottom: 0.8rem;
-  h2 {
-    margin: 0.5rem 0;
-  }
+}
+.listSort h2 {
+  margin: 0.5rem 0;
 }
 
 .iconSort {
@@ -98,10 +98,11 @@
   color: #ffffff;
   border-radius: 5px;
   padding: 0 1rem;
-  &:hover {
-    border: 1px solid #7c8c1e;
-    color: #393939;
-  }
+}
+
+.btnNav:hover {
+  border: 1px solid #7c8c1e;
+  color: #393939;
 }
 
 .error {
