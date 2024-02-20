@@ -8,7 +8,7 @@ import {
 import EmployeeModal from "../../Components/Form/EmployeeModal";
 import { useFormErrors } from "../../Components/Form/UseFormErrors";
 import styles from "./EmployeeCreate.module.scss";
-import Card from "../../components/Card";
+import Card from "../../Components/Form/Card";
 
 export default function EmployeeCreate() {
   const dispatch = useDispatch();
