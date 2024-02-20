@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <NavLink to="/">Wealth Health</NavLink>
+        <NavLink to="/">
+          <p>Wealth Health</p>
+        </NavLink>
       </div>
       <div className={styles.navigation}>
         <NavLink

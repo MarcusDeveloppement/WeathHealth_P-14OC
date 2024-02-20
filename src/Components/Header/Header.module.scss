@@ -5,11 +5,19 @@
   background-color: #f6fcd2;
   padding: 1.5rem;
 }
-.logo a {
-  color: #5a6f08;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-left: 1rem;
+
+.logo {
+  display: flex;
+  align-items: center;
+  a {
+    color: #5a6f08;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 1rem;
+    p {
+      margin: 0;
+    }
+  }
 }
 .navigation {
   margin-right: 1rem;
