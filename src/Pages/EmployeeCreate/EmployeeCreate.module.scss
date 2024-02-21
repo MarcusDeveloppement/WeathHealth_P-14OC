@@ -68,3 +68,9 @@
   align-items: center;
   z-index: 1;
 }
+@media (max-width: 1024px) {
+  .contentForm h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}

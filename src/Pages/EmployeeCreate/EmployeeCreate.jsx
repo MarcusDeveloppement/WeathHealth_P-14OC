@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addEmployee } from "../../Redux/Actions/employeeSlice";
@@ -10,6 +11,9 @@ import { useFormErrors } from "../../Components/Form/UseFormErrors";
 import styles from "./EmployeeCreate.module.scss";
 import Card from "../../Components/Form/Card";
 
+const EmployeeModalLazy = React.lazy(() =>
+  import("../../Components/Form/EmployeeModal")
+);
 export default function EmployeeCreate() {
   const dispatch = useDispatch();
   const today = new Date();
@@ -106,6 +110,7 @@ export default function EmployeeCreate() {
       {isModalOpen && <div className={styles.overlay}></div>}
       <div className={styles.contentForm}>
         <h1>Create an employee</h1>
+        <meta name="description" content="Create a new employee" />
         <form className={styles.inForm} onSubmit={handleSubmit}>
           <Card title="Personal information">
             <div>
@@ -279,7 +284,7 @@ export default function EmployeeCreate() {
           </div>
         </form>
       </div>
-      <EmployeeModal
+      <EmployeeModalLazy
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         employee={employee}

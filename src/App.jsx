@@ -4,6 +4,7 @@ import store from "./Redux/store.js";
 import Header from "./Components/Header/Header";
 import EmployeeCreate from "./Pages/EmployeeCreate/EmployeeCreate";
 import EmployeeList from "./Pages/EmployeeList/EmployeeList";
+import Error from "./Components/Error/Error.jsx";
 
 function App() {
   return (

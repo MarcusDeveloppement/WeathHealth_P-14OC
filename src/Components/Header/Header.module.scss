@@ -31,6 +31,17 @@
 }
 
 .activeLink {
-  color: #8f927a !important;
+  color: #187b01 !important;
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .navigation a {
+    padding: 1.3rem;
+    font-size: 1.3rem;
+  }
+  .logo a {
+    font-size: 1.2rem;
+    width: 5rem;
+  }
 }

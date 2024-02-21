@@ -3,6 +3,9 @@
   flex-direction: column;
 }
 
+.tableContentList {
+  width: 100%;
+}
 .tableHeader {
   display: flex;
   justify-content: space-between;
@@ -33,6 +36,7 @@
 
 .list {
   background-color: rgb(252, 254, 246);
+  width: -webkit-fill-available;
 }
 
 .listHead {
@@ -108,4 +112,21 @@
 .error {
   font-size: 1.8rem;
   font-style: italic;
+}
+@media (max-width: 1024px) {
+  .listSort {
+    height: 7rem;
+  }
+  .tableContentList {
+    overflow-x: auto;
+  }
+  .tableHeader {
+    flex-direction: column;
+  }
+  .footerContent {
+    flex-direction: column;
+    p {
+      margin: 0.5rem;
+    }
+  }
 }
