@@ -6,7 +6,6 @@ import {
   setDepartments,
   setUSstates,
 } from "../../Redux/Actions/selectedOptionSlice";
-import EmployeeModal from "../../Components/Form/EmployeeModal";
 import { useFormErrors } from "../../Components/Form/UseFormErrors";
 import styles from "./EmployeeCreate.module.scss";
 import Card from "../../Components/Form/Card";
