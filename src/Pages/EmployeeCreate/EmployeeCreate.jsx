@@ -40,7 +40,7 @@ export default function EmployeeCreate() {
   const handleCloseModal = () => setIsModalOpen(false);
 
   useEffect(() => {
-    document.title = "Wealth Health– Add an employee";
+    document.title = "Wealth Health – Add an employee";
   }, []);
 
   useEffect(() => {

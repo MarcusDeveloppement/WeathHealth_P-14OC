@@ -13,13 +13,11 @@ export default function EmployeeList() {
 
   return (
     <div>
-      <div>
-        <h1 className={styles.title}>Current Employees</h1>
-        <TableComponent
-          content={employees}
-          objectKey={{ state: "abbreviation" }}
-        />
-      </div>
+      <h1 className={styles.title}>Current Employees</h1>
+      <TableComponent
+        content={employees}
+        objectKey={{ state: "abbreviation" }}
+      />
     </div>
   );
 }
