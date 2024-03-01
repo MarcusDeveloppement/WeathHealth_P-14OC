@@ -2,7 +2,6 @@ import fs from "fs/promises";
 import path from "path";
 import process from "process";
 
-// Assurez-vous que le chemin vers votre fichier rapport Lighthouse JSON est correct
 const rapportPath = path.resolve(
   process.cwd(),
   "./LighthouseJson/rapport-lighthouse-form-react.json"
